@@ -1,0 +1,123 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Quản Lý Sản Phẩm</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6 mx-auto">
+        <h3 class="display-4 text-center">Quản Lý Sản Phẩm</h3>
+        <form id="formQLSP">
+          <div class="row">
+            <div class="col-6 form-group">
+              <label for="">Mã Sản Phẩm: </label>
+              <input type="text" class="form-control" id="txtProductId" placeholder="Mã Sản Phẩm" />
+              <span id="spanId" class="text-danger"></span>
+            </div>
+            <div class="col-6 form-group">
+              <label for="">Ảnh Sản Phẩm : </label>
+              <input type="text" class="form-control" id="txtProductImage" placeholder='Link Ảnh Sản Phẩm' />
+              <span id="spanImage" class="text-danger"></span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6 form-group">
+              <label for="">Tên Sản Phẩm : </label>
+              <input type="text" class="form-control" id="txtProductName" placeholder="Tên Sản Phẩm" />
+              <span id="spanName" class="text-danger"></span>
+            </div>
+            <div class="col-6 form-group">
+              <label for="">Loại Sản Phẩm: </label>
+              <select name="" id="txtProductType" class="form-control">
+                <option>Chọn loại sản phẩm</option>
+                <option>Mobile</option>
+                <option>Tablet</option>
+                <option>Laptop</option>
+              </select>
+              <span id="spanType" class="text-danger"></span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6 form-group">
+              <label for="">Giá Sản Phẩm: </label>
+              <input type="text" class="form-control" id="txtProductPrice" placeholder="Giá Sản Phẩm" />
+              <span id="spanPrice" class="text-danger"></span>
+            </div>
+            <div class="col-6 form-group">
+              <label for="">Mô Tả Sản Phẩm : </label>
+              <textarea class="form-control" placeholder="Mô Tả Sản Phẩm" id="txtProductDescription"
+                rows="2"></textarea>
+              <span id="spanDescription" class="text-danger"></span>
+            </div>
+          </div>
+
+
+          <div class="form-group text-center">
+            <div id="btnCreate">
+              <button type="button" onclick="createProduct()" class="btn btn-success">
+                Thêm Sản Phẩm
+              </button>
+
+              <button type="reset" id="btnUpdate" onclick="updateProduct()" class="btn btn-primary">
+                Cập Nhật Sản Phẩm
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <div class="row">
+          <div class="col-9 form-group">
+            <input  placeholder="Nhập tên sản phẩm" type="text" class="form-control" oninput="searchProduct()"
+              id="txtSearch" />
+          </div>
+          <div class="col-3 form-group">
+            <button onclick="searchProduct()" id="btnSearch" class="btn btn-primary">Tìm Kiếm</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-8 mx-auto">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Id Sản Phẩm</th>
+              <th>Ảnh Sản Phẩm</th>
+              <th>Tên Sản Phẩm</th>
+              <th>Giá Sản Phẩm</th>
+              <th>Mô Tả</th>
+              <th>Loại Sản Phẩm</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tbodyProduct">
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios@0.27.2/dist/axios.min.js"></script>
+    <script src="./models/product.js"></script>
+    <script type="module" src="./js/index.js"></script>
+  </div>
+
+</body>
+
+</html>
